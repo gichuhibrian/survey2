@@ -1,40 +1,29 @@
 import React, {useEffect, useState} from 'react'
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native'
+import { data } from '../data'
+console.log('data', data)
 const SurveyScreen = ({navigation}) => {
-    const [questions, setQuestions] = useState([]);
     const [number, setNumber] = useState(0);
-    const getQuestions = async() => {
-        const response = await fetch('https://opentdb.com/api.php?amount=10&type=multiple')
-        const data = await(response.json())
-        console.log(data.results[0].question)
-        setQuestions(data.results);
-    }
 
     useEffect(() => {
-       getQuestions();
     }, []);
 
     return (
         <View style={styles.container}>
             {
-                questions && (
+                data && (
                     <View style={styles.parent}>
                         <View style={styles.question}>
-                            <Text style={styles.questionText}>{`Q.  ${questions[number]?.question}`}</Text>
+                            <Text style={styles.questionText}>{`Q.  ${data[number]?.question}`}</Text>
                         </View>
                         <View style={styles.answers}>
-                            <TouchableOpacity style={styles.answerButton}>
-                                <Text style={styles.answer}>Option 1</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity style={styles.answerButton}>
-                                <Text style={styles.answer}>Option 2</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity style={styles.answerButton}>
-                                <Text style={styles.answer}>Option 3</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity style={styles.answerButton}>
-                                <Text style={styles.answer}>Option 4</Text>
-                            </TouchableOpacity>
+                            {
+                                data[number]?.answers.map((answer, index) => (
+                                    <TouchableOpacity style={styles.answerButton} key={index}>
+                                        <Text style={styles.answer}>{answer}</Text>
+                                    </TouchableOpacity>
+                                ))
+                            }
                         </View>
                         <View style={styles.footer}>
                             <TouchableOpacity style={styles.button}>
@@ -42,12 +31,12 @@ const SurveyScreen = ({navigation}) => {
                             </TouchableOpacity>
 
                             {
-                                number === 9 ? (
+                                number === 2 ? (
                                     <TouchableOpacity
                                         style={styles.button}
                                         onPress={() => navigation.navigate('Completed')}
                                     >
-                                        <Text style={styles.buttonText}>END</Text>
+                                        <Text style={styles.buttonText}>SUBMIT</Text>
                                     </TouchableOpacity>
                                 ): (
                                     <TouchableOpacity
