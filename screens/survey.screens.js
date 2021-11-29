@@ -20,7 +20,7 @@ const SurveyScreen = ({navigation}) => {
                 questions && (
                     <View style={styles.parent}>
                         <View style={styles.question}>
-                            <Text style={styles.questionText}>{`Q.  ${questions[number].question}`}</Text>
+                            <Text style={styles.questionText}>{`Q.  ${questions[number]?.question}`}</Text>
                         </View>
                         <View style={styles.answers}>
                             <TouchableOpacity style={styles.answerButton}>
