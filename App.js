@@ -3,12 +3,14 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import HomeScreen from "./screens/home.screens";
 import SurveyScreen from "./screens/survey.screens";
+import CompletedScreen from "./screens/complete.screens";
 
 export default function App() {
   return (
     <View style={styles.container}>
       {/*<HomeScreen />*/}
-        <SurveyScreen />
+      {/*  <SurveyScreen />*/}
+        <CompletedScreen />
       <StatusBar style="auto" />
     </View>
   );
