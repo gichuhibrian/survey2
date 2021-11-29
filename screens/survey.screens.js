@@ -1,13 +1,12 @@
 import React, {useEffect, useState} from 'react'
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native'
-import axios from "axios";
 const SurveyScreen = ({navigation}) => {
     const [questions, setQuestions] = useState([]);
     const [number, setNumber] = useState(0);
     const getQuestions = async() => {
         const response = await fetch('https://opentdb.com/api.php?amount=10&type=multiple')
         const data = await(response.json())
-        console.log('response', data.results);
+        console.log(data.results[0].question)
         setQuestions(data.results);
     }
 
@@ -21,7 +20,7 @@ const SurveyScreen = ({navigation}) => {
                 questions && (
                     <View style={styles.parent}>
                         <View style={styles.question}>
-                            <Text style={styles.questionText}>Q. This is the first question</Text>
+                            <Text style={styles.questionText}>{`Q.  ${questions[number].question}`}</Text>
                         </View>
                         <View style={styles.answers}>
                             <TouchableOpacity style={styles.answerButton}>
@@ -41,12 +40,24 @@ const SurveyScreen = ({navigation}) => {
                             <TouchableOpacity style={styles.button}>
                                 <Text style={styles.buttonText}>SKIP</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity style={styles.button}>
-                                <Text style={styles.buttonText}>NEXT</Text>
-                            </TouchableOpacity>
-                            {/*<TouchableOpacity style={styles.button}>*/}
-                            {/*    <Text style={styles.buttonText}>END</Text>*/}
-                            {/*</TouchableOpacity>*/}
+
+                            {
+                                number === 9 ? (
+                                    <TouchableOpacity
+                                        style={styles.button}
+                                        onPress={() => navigation.navigate('Completed')}
+                                    >
+                                        <Text style={styles.buttonText}>END</Text>
+                                    </TouchableOpacity>
+                                ): (
+                                    <TouchableOpacity
+                                        style={styles.button}
+                                        onPress={() => setNumber(number+1)}
+                                    >
+                                        <Text style={styles.buttonText}>NEXT</Text>
+                                    </TouchableOpacity>
+                                )
+                            }
                         </View>
                     </View>
                 )
