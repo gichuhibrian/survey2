@@ -10,9 +10,9 @@ const Stack = createStackNavigator();
 function MyStack() {
     return (
         <Stack.Navigator>
-            <Stack.Screen name="Home" component={HomeScreen} />
-            <Stack.Screen name="Survey" component={SurveyScreen} />
-            <Stack.Screen name="Completed" component={CompletedScreen} />
+            <Stack.Screen name="Home" component={HomeScreen} options={{headerShown: false}}/>
+            <Stack.Screen name="Survey" component={SurveyScreen} options={{headerShown: false}}/>
+            <Stack.Screen name="Completed" component={CompletedScreen} options={{headerShown: false}}/>
         </Stack.Navigator>
     );
 }

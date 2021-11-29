@@ -2,7 +2,7 @@ import React from 'react'
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native'
 import Title from "../components/title.components";
 
-const CompletedScreen = () => {
+const CompletedScreen = ({navigation}) => {
     return (
         <View>
             <Title title='Result' />
@@ -13,7 +13,7 @@ const CompletedScreen = () => {
                     source={{uri: 'https://image.freepik.com/free-vector/happy-people-dancing-party-flat-illustration_74855-5264.jpg'}} />
             </View>
             <View>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Home')}>
                     <Text>Home</Text>
                 </TouchableOpacity>
             </View>

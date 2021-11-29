@@ -1,7 +1,7 @@
 import React from 'react'
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native'
 import {} from "react-native-web";
-const SurveyScreen = () => {
+const SurveyScreen = ({navigation}) => {
     return (
         <View style={styles.container}>
             <View style={styles.question}>
@@ -27,6 +27,9 @@ const SurveyScreen = () => {
                 </TouchableOpacity>
                 <TouchableOpacity>
                     <Text>NEXT</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Completed')}>
+                    <Text>END</Text>
                 </TouchableOpacity>
             </View>
         </View>
