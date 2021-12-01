@@ -9,7 +9,7 @@ const CompletedScreen = ({navigation}) => {
                 <Image
                     style={styles.banner}
                     resizeMode="contain"
-                    source={{uri: 'https://image.freepik.com/free-vector/happy-people-dancing-party-flat-illustration_74855-5264.jpg'}} />
+                    source={{uri: 'https://lh3.googleusercontent.com/proxy/3AxYRr5XkIRC9afvQlSa4o4DFgNaGHuS-SNTw2DQkSJlzgFzbNoT28XlKTfravHtB32ldsVVJiyY3su1vaddO7fNCFkWMJEt-vcFGvJXBmFGTh65AY5HE3nFnUgnTI85QPBOP9AITK8uC_M'}} />
             </View>
             <Title title='Thank you for taking part in the survey' />
             <TouchableOpacity
@@ -37,10 +37,11 @@ const styles = StyleSheet.create({
         padding: 40,
         paddingHorizontal: 20,
         height: '100%',
+        backgroundColor: 'orange',
     },
     button: {
         width: '100%',
-        backgroundColor: '#B8B8FF',
+        backgroundColor: 'purple',
         padding: 20,
         borderRadius: 16,
         alignItems: 'center',

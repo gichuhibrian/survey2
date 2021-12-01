@@ -10,7 +10,7 @@ const HomeScreen = ({navigation}) => {
                 <Image
                     style={styles.banner}
                     resizeMode="contain"
-                    source={{uri: 'https://image.freepik.com/free-vector/survey-report-checklist-questionnaire-business-illustration_114835-117.jpg'}} />
+                    source={{uri: 'https://image.freepik.com/free-vector/school-building-design-vector-illustrator_24640-49040.jpg'}} />
             </View>
             <TouchableOpacity
                 style={styles.button}
@@ -37,10 +37,11 @@ const styles = StyleSheet.create({
         padding: 40,
         paddingHorizontal: 20,
         height: '100%',
+        backgroundColor: 'orange',
     },
     button: {
         width: '100%',
-        backgroundColor: '#B8B8FF',
+        backgroundColor: 'purple',
         padding: 20,
         borderRadius: 16,
         alignItems: 'center',

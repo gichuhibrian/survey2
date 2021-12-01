@@ -31,7 +31,7 @@ const SurveyScreen = ({navigation}) => {
                             </TouchableOpacity>
 
                             {
-                                number === 2 ? (
+                                number === 3 ? (
                                     <TouchableOpacity
                                         style={styles.button}
                                         onPress={() => navigation.navigate('Completed')}
@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
         padding: 40,
         paddingHorizontal: 20,
         height: '100%',
+        backgroundColor: 'orange',
     },
     footer: {
         marginBottom: 12,
@@ -79,7 +80,7 @@ const styles = StyleSheet.create({
     },
     button: {
         paddingHorizontal: 16,
-        backgroundColor: '#B8B8FF',
+        backgroundColor: 'purple',
         padding: 20,
         borderRadius: 16,
         alignItems: 'center',

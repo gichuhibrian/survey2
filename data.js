@@ -1,29 +1,35 @@
 export const data = [
     {
-        question: 'What is your current level of education',
+        question: 'Which activities in the classroom do you enjoy the most',
         answers: [
-            'No formal education',
-            'Primary',
-            'High School',
-            'University',
+            'Fast Facts',
+            'Memory',
+            'Treasure Hunt',
+            'Other',
         ]
     },
     {
-        question: 'I like mobile development',
+        question: 'Given a chance, what is one change that you would like to see',
+        answers: [
+            'Teaching Method',
+            'Time taken to complete a chapter',
+            'Extracurricular activities',
+        ]
+    },
+    {
+        question: 'What motivates you to learn more',
+        answers: [
+            'Asking a lot of questions to the teacher',
+            'Completing various assignments',
+            'Sport and other extracurricular activities',
+            'Other',
+        ]
+    },
+    {
+        question: 'Do you think that the school provides you with adequate sports facilities',
         answers: [
             'Yes',
             'No',
-            'Not Sure',
         ]
     },
-    {
-        question: 'How often do you use the internet for homework',
-        answers: [
-            'Never',
-            'About once a month',
-            'About once a week',
-            'Almost everyday',
-            'Everyday'
-        ]
-    }
 ]
